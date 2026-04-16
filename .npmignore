@@ -1,0 +1,11 @@
+output/
+test-output/
+rebuild/
+screenshots/
+.next/
+.claude/
+.git/
+CLAUDE.md
+*.log
+.DS_Store
+.env*

@@ -1,0 +1,17 @@
+name: 'Liftit Design Drift Check'
+description: 'Compare your site against a reference design and report visual drift'
+inputs:
+  url:
+    description: 'URL to check'
+    required: true
+  reference-dir:
+    description: 'Directory with reference scan data'
+    required: false
+    default: '.liftit'
+  threshold:
+    description: 'Minimum match percentage (0-100)'
+    required: false
+    default: '95'
+runs:
+  using: 'node20'
+  main: 'dist/scripts/github-action.js'

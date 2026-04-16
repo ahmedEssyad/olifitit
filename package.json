@@ -1,0 +1,80 @@
+{
+  "name": "@ahmedessyad/liftit",
+  "version": "1.0.3",
+  "description": "Lift any site's design. Paste a URL, get the code. Extracts design systems, generates React components, exports Tailwind/shadcn configs, diffs against your existing CSS.",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "bin": {
+    "liftit": "./bin/liftit.js"
+  },
+  "files": [
+    "bin/",
+    "dist/",
+    "agents/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "scan": "ts-node src/scan/cli.ts",
+    "analyze": "ts-node src/scan/analyze.ts",
+    "motion": "ts-node src/scan/capture-motion.ts",
+    "interactions": "ts-node src/scan/extract-interactions.ts",
+    "scroll-interactions": "ts-node src/scan/capture-scroll-interactions.ts",
+    "assets": "ts-node src/transform/copy-assets.ts",
+    "validate": "ts-node src/scan/validate.ts",
+    "extract": "ts-node src/cli/orchestrate.ts",
+    "mcp": "ts-node src/cli/mcp-server.ts",
+    "mcp:http": "ts-node src/cli/mcp-http-server.ts",
+    "browsers": "ts-node src/extras/cross-browser.ts",
+    "generate": "ts-node src/export/generate-component.ts",
+    "generate:project": "ts-node src/export/generate-project.ts",
+    "match": "ts-node src/export/match-component.ts",
+    "export": "ts-node src/export/export.ts",
+    "export:tailwind": "ts-node src/export/export.ts tailwind",
+    "export:css": "ts-node src/export/export.ts css-variables",
+    "export:shadcn": "ts-node src/export/export.ts shadcn",
+    "export:all": "ts-node src/export/export.ts all",
+    "build": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "design-system",
+    "css-extraction",
+    "tailwind",
+    "shadcn",
+    "playwright",
+    "mcp",
+    "claude",
+    "web-scraping",
+    "design-tokens",
+    "component-generator",
+    "react",
+    "next.js",
+    "design-to-code"
+  ],
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.82.0",
+    "@clack/prompts": "^1.2.0",
+    "@modelcontextprotocol/sdk": "^1.28.0",
+    "@types/css-tree": "^2.3.11",
+    "@types/node": "^25.5.0",
+    "css-tree": "^3.2.1",
+    "lighthouse": "^13.1.0",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.58.2",
+    "pngjs": "^7.0.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/pngjs": "^6.0.5",
+    "@vitest/coverage-v8": "^4.1.2",
+    "vitest": "^4.1.2"
+  }
+}
